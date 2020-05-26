@@ -1,0 +1,52 @@
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div>
+            <h1 class="navbar-brand" >Nagarro</h1>
+        </div>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a href="https://www.nagarro.com/en" class="nav-link">Nagarro</a></li>
+            <li><a href="https://news.google.com/covid19/map?hl=en-IN&gl=IN&ceid=IN%3Aen" routerLinkActive="active"  class="nav-link">Want to know more about Covid-19!</a></li>
+        </ul>
+        
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a href="" class="nav-link">LogOut</a></li>
+        </ul>
+    </nav>
+  
+  </header>
+
+<div class="container">
+    <h1>Welcome to nagarro notification portal!</h1>
+
+    <form [formGroup]="adminForm" (ngSubmit)= "onSubmit()">
+
+        
+        <label class="col-md-3"> Event Type<span class="required" style="color: red;">*</span></label>
+        <div class="col-md-9">
+          <select formControlName="eventType" class ="form-control" placeholder="Choose Event Type">
+              <option  *ngFor ="let event of Event"  >{{event}} </option>
+          </select>
+      </div>
+
+      <label class="col-md-3"> Subject:</label>
+      <div class="col-md-9">
+        <input  type="text" formControlName="subject" class ="form-control" placeholder="Notification Subject">
+      </div>
+
+      <label class="col-md-3"> Message:</label>
+      <div class="col-md-9" >
+        <input  type="text" formControlName="message" class ="form-control" placeholder="message" [ngClass]="{ 'is-invalid': submitted && f.message.errors}">
+      </div>
+      <button type="submit" >Submit</button>
+    </form>
+</div>
+
+
+
+  
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted"> © 2020 Nagarro </span> 
+    </div>
+</footer>

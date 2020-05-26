@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NotificationSystem"
+    }
+  },
+  "defaultProject": "NotificationSystem",
+  "cli": {
+    "analytics": "4583d48b-0ca8-4edc-b855-8f1376bb1878"
+  }
 }
